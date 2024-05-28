@@ -1,0 +1,24 @@
+Troubleshooting
+If attempting to print a label and you get the error stating the device is not ready.  This can be due to the orginal data file that you used to create the lables fields no longer exists.
+
+tip, if using an exitingly created label from the previous learned method (creating your datasource from a text file).  Delete the datasource from the label.
+To do this in bartender designer
+- File/Database Connection Setup (if your 
+- If the orginal file that you used to build your label no longer exists. (an error will occur "The device is not ready")
+- From the Database Setup window slect the data source
+- click on the red X in the bottom left of the window
+- Click Yes to delete the data source
+-Ensure your named DataSources match with your
+
+In your integration, ensure your Named Datasources use the variable as the value i.e.Name CustID Value %CustID% 
+
+Pros and cons
+Con: Using the Get method Need an integration per label, rather than 1 integration for all label.
+Pro: repeatable process using two functions, one BAQ and User codes.
+Pro: Get a response back from Bartender to Epcor so you know the print was succesful
+
+Con GETS limited to 2048 characters and need to encode special characters (query parameters)
+Pro POST no restriction on data length
+
+
+
