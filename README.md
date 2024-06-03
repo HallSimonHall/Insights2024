@@ -16,4 +16,8 @@
 - Use database source for label
 - require the creation of a file with BT command script in the first row of the file.
  
-
+# 4. Additional Misc
+- Operating Bartender independently of the App server modify your /net6.0/appsettings.json if not yuou will receive 403 "Remote Access not allowed" errors
+-    "RemoteAccess": {
+      "Allowed":  true
+   } 
