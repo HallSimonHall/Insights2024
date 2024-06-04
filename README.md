@@ -1,4 +1,4 @@
-# Bartender REST API
+# Bartender REST API - Bartender 2022 R8
  This presentation details the steps for creating a Bartender label using the Bartender REST API.  It also compares the other methods that you have available for creating labels using the standard Epicor methods and using the Bartender Integration Web Services.
 
 # 1. Bartender REST API (POST)
