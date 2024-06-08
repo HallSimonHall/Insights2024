@@ -21,3 +21,6 @@
 -    "RemoteAccess": {
       "Allowed":  true
    } 
+
+# 5. Functions
+- Helpers-Demo/ExecuteBAQ. Accepts BAQ name and delimited parameters pair list eg JobNum:1234~Plant:MAIN
