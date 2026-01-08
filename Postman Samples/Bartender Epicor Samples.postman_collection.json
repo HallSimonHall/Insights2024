@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "87a14575-3c3b-443e-b710-67829cbf6a09",
+		"name": "Bartender Epicor Samples",
+		"description": "Bartender and Epicor REST Label Collection samples.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9911082"
+	},
+	"item": [
+		{
+			"name": "New Request Data In Header",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{BartenderServer}}Integration/WSILabelGET/Execute?CustID=40844&CustName=Barneys HEATING %26 COOLING&JobNum=002853-7-1&OrderNum=002853&PartDesc=PM4 MISCELL SMA:790979/L:1&PartNum=041075-2853-7&Qty=1.00000000&SMA=790979/L:1*** DO NOT MAKE ***\nALREADY MADE ON SO%23 790979 IN SAGE\nW2000 X H180 BAR GRILLE\"&TFFromWarehouse=04&TFPlant=PM4GEPP&TFToPlant=GEPP&TFToWarehouse=10&TransferOrderNum=001252&PrinterName=\\\\starlord.local\\LabelPrinter&BartenderLabel=\\\\starlord\\templates\\PBS_SO_Label_LiveTest.btw",
+					"protocol": "http",
+					"host": [
+						"{{BartenderServer}}Integration"
+					],
+					"path": [
+						"WSILabelGET",
+						"Execute"
+					],
+					"query": [
+						{
+							"key": "CustID",
+							"value": "40844"
+						},
+						{
+							"key": "CustName",
+							"value": "Barneys HEATING %26 COOLING"
+						},
+						{
+							"key": "JobNum",
+							"value": "002853-7-1"
+						},
+						{
+							"key": "OrderNum",
+							"value": "002853"
+						},
+						{
+							"key": "PartDesc",
+							"value": "PM4 MISCELL SMA:790979/L:1"
+						},
+						{
+							"key": "PartNum",
+							"value": "041075-2853-7"
+						},
+						{
+							"key": "Qty",
+							"value": "1.00000000"
+						},
+						{
+							"key": "SMA",
+							"value": "790979/L:1*** DO NOT MAKE ***\nALREADY MADE ON SO%23 790979 IN SAGE\nW2000 X H180 BAR GRILLE\""
+						},
+						{
+							"key": "TFFromWarehouse",
+							"value": "04"
+						},
+						{
+							"key": "TFPlant",
+							"value": "PM4GEPP"
+						},
+						{
+							"key": "TFToPlant",
+							"value": "GEPP"
+						},
+						{
+							"key": "TFToWarehouse",
+							"value": "10"
+						},
+						{
+							"key": "TransferOrderNum",
+							"value": "001252"
+						},
+						{
+							"key": "PrinterName",
+							"value": "\\\\starlord.local\\LabelPrinter"
+						},
+						{
+							"key": "BartenderLabel",
+							"value": "\\\\starlord\\templates\\PBS_SO_Label_LiveTest.btw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request POST Data In Body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"PrinterName\" : \"\\\\\\\\<printerShareServer>\\\\LabelPrinter\",\r\n    \"BartenderLabel\" : \"PBS_SO_Label_REST_V1.BTW\",\r\n    \"Customer_CustID\" : \"1234565\",\r\n    \"Customer_Name\" :  \"Two Cool Systems\",\r\n    \"Env\" : \"Pilot\",\r\n    \"JobHead_JobNum\" : \"111111\",\r\n    \"JobProd_OrderNum\" : \"8888888\",\r\n    \"JobHead_PartDescription\" : \"300x10m Flex Duct\",\r\n    \"JobHead_PartNum\" : \"110022\",\r\n    \"JobHead_ProdQty\" : \"5\",\r\n    \"JobHead_Plant\" : \"mgfsys\",\r\n\r\n    \"PrinterName\" : \"\\\\\\\\<printerShareServer>\\\\LabelPrinter\",\r\n    \"BartenderLabel\" : \"PBS_SO_Label_REST_V1.BTW\",\r\n    \"Customer_CustID\" : \"1234565\",\r\n    \"Customer_Name\" :  \"Two Cool Systems\",\r\n    \"Env\" : \"Pilot\",\r\n    \"JobHead_JobNum\" : \"111111\",\r\n    \"JobProd_OrderNum\" : \"8888888\",\r\n    \"JobHead_PartDescription\" : \"300x10m Flex Duct\",\r\n    \"JobHead_PartNum\" : \"110022\",\r\n    \"JobHead_ProdQty\" : \"5\",\r\n    \"JobHead_Plant\" : \"mgfsys\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BartenderServer}}/Integration/WSILabelPOST/Execute",
+					"protocol": "http",
+					"host": [
+						"{{BartenderServer}}"
+					],
+					"path": [
+						"Integration",
+						"WSILabelPOST",
+						"Execute"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request POST CSV",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Customer_CustID,Customer_Name,Env,JobHead_JobNum,JobProd_OrderNum,JobHead_PartDescription,JobHead_PartNum,JobHead_ProdQty,JobHead_Plant\r\n1234565,Two Cool Systems,Pilot,111111,8888888,300x10m Flex Duct,110022,1,mgfsys\r\n1234565,Two Cool Systems,Pilot,1111cvb11,865888888,300x10m Flex Duct,110022,1,mgfsys\r\n",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BartenderServer}}Integration/WSILabelPOSTCSV/Execute?PrinterName=\\\\{BartenderServer}}LabelPrinter&BartenderLabel=\\\\{BartenderServer}}templates\\<yourbartender label template filename inc extension>",
+					"protocol": "http",
+					"host": [
+						"{{BartenderServer}}Integration"
+					],
+					"path": [
+						"WSILabelPOSTCSV",
+						"Execute"
+					],
+					"query": [
+						{
+							"key": "PrinterName",
+							"value": "\\\\{BartenderServer}}LabelPrinter"
+						},
+						{
+							"key": "BartenderLabel",
+							"value": "\\\\{BartenderServer}}templates\\<yourbartender label template filename inc extension>"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BTRESTDirect-OneLabel",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "epicor",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "epicor",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Azt9kSsLWQexIKdon0FZ0ZfVtNHezpMbNg5Wh2bxMdCzC"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\"labelName\": \"REST_DIRECT_Label.btw\",\r\n  \"BAQParams\": \"JobNum:2046\",\r\n  \"BAQName\": \"Job_Label_Data\",\r\n  \"isAction\": true\r\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{EpicorServer}}{AppServer}}api/v2/efx/staging/Epic06/BTRREST/BTRESTDirect-OneLabel",
+					"protocol": "https",
+					"host": [
+						"{{EpicorServer}}{AppServer}}api"
+					],
+					"path": [
+						"v2",
+						"efx",
+						"staging",
+						"Epic06",
+						"BTRREST",
+						"BTRESTDirect-OneLabel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BTRESTDirect-ManyLbl",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "epicor",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "epicor",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\"labelName\": \"REST_DIRECT_Label.btw\",\r\n  \"BAQParams\": \"\",\r\n  \"BAQName\": \"testcustomer\",\r\n  \"isAction\": true\r\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{EpicorServer}}/{{AppServer}}/api/v2/efx/staging/Epic06/BTRREST/BTRESTDirectManyLabel",
+					"protocol": "https",
+					"host": [
+						"{{EpicorServer}}"
+					],
+					"path": [
+						"{{AppServer}}",
+						"api",
+						"v2",
+						"efx",
+						"staging",
+						"Epic06",
+						"BTRREST",
+						"BTRESTDirectManyLabel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ExecuteBAQ DEV",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "epicor",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "epicor",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Azt9kSsLWQexIKdon0FZ0ZfVtNHezpMbNg5Wh2bxMdCzC"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\"paramList\": \"\",\r\n    \"BAQName\":\"testcustomer\"\r\n   }\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{EpicorServer}}/{{AppServer}}/api/v2/efx/staging/Epic06/Helpers-Demo/ExecuteBAQWithParams",
+					"protocol": "https",
+					"host": [
+						"{{EpicorServer}}"
+					],
+					"path": [
+						"{{AppServer}}",
+						"api",
+						"v2",
+						"efx",
+						"staging",
+						"Epic06",
+						"Helpers-Demo",
+						"ExecuteBAQWithParams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RESTAPIPrint",
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "workstation",
+							"value": "{{Hostname}}",
+							"type": "string"
+						},
+						{
+							"key": "domain",
+							"value": "{{Domain}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{NTLMPass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{NTLMUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"PrintBTWAction\": {\r\n        \"Document\": \"\\\\\\\\starlord\\\\Templates\\\\PBS_SO_Label_LiveTest.BTW\",\r\n        \"Printer\": \"\\\\\\\\starlord.local\\\\LabelPrinter\",\r\n        \"Name\": \"Print Document Request\",\r\n        \"Description\": \"This is a print document request to print a barcode label.\",\r\n        \"SaveAfterPrint\": false,\r\n        \"QueueAndContinue\": false,\r\n        \"VerifyPrintJobIsComplete\": true,\r\n        \"ReturnPrintSummary\": true,\r\n        \"NamedDataSources\": {\r\n            \"JobHead_JobNum\": \"2046\",\r\n            \"JobProd_OrderNum\": 5107,\r\n            \"JobHead_PartNum\": \"KLL-678-POO\",\r\n            \"JobHead_PartDescription\": \"Linear Frame\",\r\n            \"JobHead_ProdQty\": 200.0,\r\n            \"JobHead_Plant\": \"MfgSys\",\r\n            \"Customer_CustID\": \"DALTON\",\r\n            \"Customer_Name\": \"Dalton Manufacturing\",\r\n            \"Calculated_LabelData\": \"&CustID=&CustName=&JobNum=2046&OrderNum=002853&PartDesc=Linear Frame&PartNum=KLL-678-POO&Qty=200.00000000&SMA=790979/L:1*** DO NOT MAKE ***ALREADY MADE ON SO%23 790979  IN SAGE W2000 X H180 BAR GRILLE&TFFromWarehouse=04&TFPlant=PM4GEPP&TFToPlant=GEPP&TFToWarehouse=10&TransferOrderNum=001252\",\r\n            \"Calculated_Env\": \"NonProduction\"\r\n        }\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BartenderServer}}:5159/api/actions",
+					"protocol": "http",
+					"host": [
+						"{{BartenderServer}}"
+					],
+					"port": "5159",
+					"path": [
+						"api",
+						"actions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RESTAPIPrint Get Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "workstation",
+							"value": "{{Hostname}}",
+							"type": "string"
+						},
+						{
+							"key": "domain",
+							"value": "{{Domain}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{NTLMPass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{NTLMUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"PrintBTWAction\": {\r\n    \"DocumentFile\": \"C:\\\\EpicorData\\\\Bartender\\\\PBS_SO_Label_REST_V2_CSV.btw\",\r\n    \"Printer\": \"Zebra ZT410 (203 dpi)\",\r\n    \"SaveAfterPrint\": false\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BartenderServer}}:5159/api/actions?{id}=84b689e6-24a6-42de-90df-f6cc5beee622",
+					"protocol": "http",
+					"host": [
+						"{{BartenderServer}}"
+					],
+					"port": "5159",
+					"path": [
+						"api",
+						"actions"
+					],
+					"query": [
+						{
+							"key": "{id}",
+							"value": "84b689e6-24a6-42de-90df-f6cc5beee622"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BartenderServer",
+			"value": "BatenderServer.local"
+		},
+		{
+			"key": "EpicorServer",
+			"value": "EpicorServer.local\n"
+		},
+		{
+			"key": "ApiKey",
+			"value": "<apikeyhere if using REST V2>"
+		},
+		{
+			"key": "User Auth infor",
+			"value": "Ensure you have a user account setup in Auth that you can use for testin the functions.",
+			"disabled": true
+		},
+		{
+			"key": "AppServer",
+			"value": "server"
+		},
+		{
+			"key": "NTLMUser",
+			"value": "NTLMUser"
+		},
+		{
+			"key": "NTLMPass",
+			"value": "NTLMUser"
+		},
+		{
+			"key": "Domain",
+			"value": "Domain"
+		},
+		{
+			"key": "Hostname",
+			"value": "Hostname"
+		}
+	]
+}
