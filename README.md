@@ -33,7 +33,7 @@
   - BAQName: BAQ ID
   - IsAction: Set to false if you wish to try and modify for Integration Web Services.
 
-- BTREST/BTRESTDirect-ManyLabel Prints many labels given the sigunature and uses Action groups
+- BTREST/BTRESTDirect-ManyLabel Prints many labels given the signature and uses Action groups
   - labelName: Label template file name eg.REST_DIRECT_Label.btw
   - BAQParams: Tilde Delimitted : pair delimitted baq parameters eg. CustID:1234~PartNum:1034Knut
   - BAQName: BAQ ID
@@ -48,3 +48,4 @@
 Feel free to modify to suit your needs. I hope you find this useful.
 
   
+
